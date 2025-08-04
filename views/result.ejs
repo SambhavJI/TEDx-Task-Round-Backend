@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f1f1f1;
+    }
+    h1 {
+      color: #e62b1e;
+    }
+    p {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    a, button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 20px;
+      background-color: #e62b1e;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    a:hover, button:hover {
+      background-color: #c6281a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Result</h1>
+  <p>You scored <strong><%= score %></strong></p>
+  <a href="/">Go to Home</a>
+  <a href="/questions/random">Get A Random Question</a>
+</body>
+</html>

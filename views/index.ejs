@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TEDx Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+      background-color: #fff;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #e62b1e;
+    }
+    .question {
+      margin-bottom: 30px;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+    }
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #e62b1e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c6281a;
+    }
+  </style>
+</head>
+<body>
+  <h1>TEDx Quiz</h1>
+  <form method="POST" action="/submit">
+    <% questions.forEach((q, index) => { %>
+      <div class="question">
+        <p><strong>Q<%= index + 1 %>: </strong><%= q.question %></p>
+        <% for (let key in q.options) { %>
+          <label>
+            <input type="radio" name="<%= index %>" value="<%= key %>" required>
+            <%= q.options[key] %>
+          </label>
+        <% } %>
+      </div>
+    <% }) %>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
